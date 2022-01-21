@@ -8,18 +8,17 @@ from random import sample
 import random
 
 
-dsn = cx_Oracle.makedsn('121.65.47.77',6000,'xe') # 수정예정
+dsn = cx_Oracle.makedsn('',,'xe') # db 주소, 포트
 
-# RGAPI-86d239db-bfc9-4f08-acd4-f110b451241a 메인
-# RGAPI-802e53c9-4a10-43de-8a1d-4b33199a3b2c 서브
-riot_api_key = 'RGAPI-86d239db-bfc9-4f08-acd4-f110b451241a' # api는 자기 라이엇 api사용
+
+riot_api_key = '' # api는 자기 라이엇 api사용
 
 # db 연결
 def db_open():
     global db
     global cursor
     try:
-        db = cx_Oracle.connect('DHB','1111',dsn) # id와 pw 알려준걸로 기입
+        db = cx_Oracle.connect('','',dsn) # id와 pw 
         cursor = db.cursor()
         return print("OPEN")
     except Exception as e:
