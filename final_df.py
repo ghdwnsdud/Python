@@ -8,14 +8,14 @@ from random import sample
 import random
 
 
-dsn = cx_Oracle.makedsn('121.65.47.77',6000,'xe')
+dsn = cx_Oracle.makedsn('',,'xe') # ip와 
 
 # db 연결
 def db_open():
     global db
     global cursor
     try:
-        db = cx_Oracle.connect('DHB','1111',dsn) # id와 pw 알려준걸로 기입
+        db = cx_Oracle.connect('','',dsn) # id와 pw
         cursor = db.cursor()
         return print("OPEN")
     except Exception as e:
